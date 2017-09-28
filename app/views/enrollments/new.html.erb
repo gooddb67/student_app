@@ -1,0 +1,18 @@
+<h1>New Enrollment</h1>
+
+  <% if @enrollment.errors.any? %>
+  <ul>
+    <% @enrollment.errors.full_messages.each do |message| %>
+    <li>
+      <%= message %>  </li>
+    <% end %>
+
+  </ul>
+  <% end %>
+
+
+<%= form_for @enrollment do |f| %>
+  <%=f.text_field :student_name %></br>
+  <%=f.text_field :course_name %>
+  <%=f.submit "Create Enrollment" %>
+<% end %>
